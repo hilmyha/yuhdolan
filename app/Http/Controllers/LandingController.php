@@ -19,7 +19,7 @@ class LandingController extends Controller
     {
         return view('welcome', [
             'title' => 'Home',
-            'wisatas' => Wisata::latest()->paginate(6),
+            'wisatas' => Wisata::with(['author', 'kota'])->latest()->paginate(6),
             'kotas' => Kota::all()
         ]);
     }

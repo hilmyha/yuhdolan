@@ -16,8 +16,9 @@
         
         <div class="image-child">
           <div class="image-textarea">
-            
-            <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $kota->name }}</span>
+            <a href="/kota/{{ $kota->slug }}">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-white hover:underline">{{ $kota->name }}</h5>
+            </a>
           
           </div>
         </div>

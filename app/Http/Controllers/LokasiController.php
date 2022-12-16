@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wisata;
-use App\Http\Requests\StoreWisataRequest;
-use App\Http\Requests\UpdateWisataRequest;
+use App\Models\Lokasi;
+use App\Http\Requests\StoreLokasiRequest;
+use App\Http\Requests\UpdateLokasiRequest;
 
-class WisataController extends Controller
+class LokasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,6 @@ class WisataController extends Controller
     public function index()
     {
         //
-        return view('wisata', [
-            'title' => 'Latest Update Destination',
-            'wisatas' => Wisata::with(['author', 'kota'])->latest()->paginate(9),
-        ]);
     }
 
     /**
@@ -35,10 +31,10 @@ class WisataController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWisataRequest  $request
+     * @param  \App\Http\Requests\StoreLokasiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWisataRequest $request)
+    public function store(StoreLokasiRequest $request)
     {
         //
     }
@@ -46,24 +42,21 @@ class WisataController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wisata  $wisata
+     * @param  \App\Models\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Wisata $wisata)
+    public function show(Lokasi $lokasi)
     {
-        return view('wisata-single', [
-            'title' => 'aowkoakw',
-            'wisata' => $wisata,
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wisata  $wisata
+     * @param  \App\Models\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wisata $wisata)
+    public function edit(Lokasi $lokasi)
     {
         //
     }
@@ -71,11 +64,11 @@ class WisataController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWisataRequest  $request
-     * @param  \App\Models\Wisata  $wisata
+     * @param  \App\Http\Requests\UpdateLokasiRequest  $request
+     * @param  \App\Models\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWisataRequest $request, Wisata $wisata)
+    public function update(UpdateLokasiRequest $request, Lokasi $lokasi)
     {
         //
     }
@@ -83,10 +76,10 @@ class WisataController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wisata  $wisata
+     * @param  \App\Models\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wisata $wisata)
+    public function destroy(Lokasi $lokasi)
     {
         //
     }
