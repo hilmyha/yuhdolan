@@ -22,7 +22,7 @@ class WisataFactory extends Factory
             'excerpt' => fake()->paragraph(1),
             'body' => collect(fake()->paragraphs(mt_rand(5, 10))),
             'user_id' => mt_rand(1, 5),
-            'kota_id' => mt_rand(1, 3),
+            'kota_id' => mt_rand(1, 4),
             'published_at' => now(),
         ];
     }

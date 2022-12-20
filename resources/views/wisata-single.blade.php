@@ -4,8 +4,8 @@
 <section class="bg-white">
   <div class=" pt-32 pb-4 px-4 container flex border">
     {{-- thumbnail --}}
-    <div class="object-cover overflow-hidden h-[500px] rounded-lg">
-      <img src="http://source.unsplash.com/1920x1080?{{ $wisata->kota->name }}" alt="">
+    <div class="overflow-hidden h-[500px] w-full">
+      <img class="object-cover brightness-75" src="http://source.unsplash.com/1920x1080?{{ $wisata->kota->name }}" alt="">
     </div>
   </div>
   <div class="pt-4 pb-24 px-4 container flex border">

@@ -58,7 +58,7 @@
     @apply h-[250px] overflow-hidden mb-4 bg-gray-300 rounded-lg
   }
   .img-card img{
-    @apply brightness-50 w-full h-full object-cover
+    @apply brightness-75 w-full h-full object-cover
   }
 
   /* image card */

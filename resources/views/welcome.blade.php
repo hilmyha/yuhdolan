@@ -109,35 +109,39 @@
       
       <div class="grid gap-8 grid-cols-1 xl:grid-cols-4 lg:grid-cols-2">
         @if ($blogs->count())
-        <div class="card-image lg:col-span-2">
-          <img src="http://source.unsplash.com/1920x1080?{{ $blogs[0]->title }}" alt="">
-            
-            <div class="image-child">
-              <div class="image-textarea">
+          <a class="lg:col-span-2" href="/blog/{{ $blogs[0]->slug }}">
+            <div class="card-image ">
+              <img src="http://source.unsplash.com/1920x1080?{{ $blogs[0]->title }}" alt="">
                 
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blogs[0]->title }}</span>
-                <p>{{ $blogs[0]->excerpt }}</p>
-                
-              </div>
+                <div class="image-child">
+                  <div class="image-textarea">
+                    
+                    <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blogs[0]->title }}</span>
+                    <p>{{ $blogs[0]->excerpt }}</p>
+                    
+                  </div>
+                </div>
+              
             </div>
-            
-          </div>
+          </a>
           
-          @foreach ($blogs->skip(1) as $blog)
-          <div class="card-image">
-            <img src="http://source.unsplash.com/1920x1080?{{ $blog->title }}" alt="">
-            
-            <div class="image-child">
-              <div class="image-textarea">
+            @foreach ($blogs->skip(1) as $blog)
+            <a href="/blog/{{ $blog->slug }}">
+              <div class="card-image">
+                <img src="http://source.unsplash.com/1920x1080?{{ $blog->title }}" alt="">
                 
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blog->title }}</span>
-                <p>{{ $blogs[0]->excerpt }}</p>
-                
+                <div class="image-child">
+                  <div class="image-textarea">
+                    
+                    <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blog->title }}</span>
+                    <p>{{ $blog->excerpt }}</p>
+                    
+                  </div>
+                </div>
+              
               </div>
-            </div>
-          
-          </div>
-          @endforeach 
+            </a>
+            @endforeach 
           @else
           
           @endif 

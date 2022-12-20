@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 // landing page
 Route::get('/', [LandingController::class, 'index']);
-
 // wisata
 Route::get('/wisata', [WisataController::class, 'index']);
 Route::get('/wisata/{wisata:slug}', [WisataController::class, 'show']);
@@ -28,4 +27,5 @@ Route::get('/kota', [KotaController::class, 'index']);
 Route::get('/kota/{kota:slug}', [KotaController::class, 'show']);
 // blog
 Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
 

@@ -52,7 +52,7 @@ class WisataController extends Controller
     public function show(Wisata $wisata)
     {
         return view('wisata-single', [
-            'title' => 'aowkoakw',
+            'title' => $wisata->title,
             'wisata' => $wisata,
         ]);
     }

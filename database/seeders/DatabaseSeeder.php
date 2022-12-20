@@ -49,6 +49,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Surakarta',
             'slug' => 'surakarta',
         ]);
+        
+        Kota::create([
+            'name' => 'Surabaya',
+            'slug' => 'surabaya',
+        ]);
 
         Wisata::factory(20)->create();
 
