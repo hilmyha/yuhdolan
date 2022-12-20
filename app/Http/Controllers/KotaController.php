@@ -16,8 +16,8 @@ class KotaController extends Controller
     public function index()
     {
         return view('kota', [
-            'title' => 'Kota',
-            'kotas' => Kota::all()
+            'title' => 'City',
+            'kotas' => Kota::with(['wisata'])->get()
         ]);
     }
     /**
@@ -49,7 +49,11 @@ class KotaController extends Controller
      */
     public function show(Kota $kota)
     {
-        //
+        return view('bykota', [
+            'title' => $kota->name,
+            'wisatas' => $kota->wisata,
+            'kotas' => $kota->wisata,
+        ]);
     }
 
     /**

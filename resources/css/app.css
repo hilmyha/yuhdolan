@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  img{
+    @apply w-full h-full
+  }
+}
+
 @layer components{
   /* navbar */
   .navbar-body{
@@ -23,7 +29,7 @@
     @apply w-full mt-16
   }
   .item{
-    @apply bg-red-500 h-[400px] md:h-[600px] overflow-hidden text-center
+    @apply bg-gray-500 h-[400px] md:h-[600px] overflow-hidden text-center
   }
   .item img{
     @apply w-full h-full object-cover brightness-50
@@ -48,6 +54,12 @@
   .card{
     @apply bg-white border border-gray-200 rounded-lg shadow-md flex flex-col
   }
+  .img-card{
+    @apply h-[250px] overflow-hidden mb-4 bg-gray-300 rounded-lg
+  }
+  .img-card img{
+    @apply brightness-50 w-full h-full object-cover
+  }
 
   /* image card */
   .card-image{
@@ -55,7 +67,7 @@
   }
   /* image card area */
   .card-image img{
-    @apply brightness-50 w-full h-full hover:blur-sm hover:scale-110 transition duration-300 ease-in-out object-cover
+    @apply brightness-50 w-full h-full hover:blur-sm hover:scale-110 transition duration-300 ease-in-out object-cover bg-gray-500
   }
   .card-image .image-child{
     @apply absolute flex

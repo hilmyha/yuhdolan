@@ -71,7 +71,7 @@
         @foreach ($wisatas as $wisata)
           <article class="card">
             <div class="p-5">
-              <div class="overflow-hidden object-cover mb-4">
+              <div class="img-card">
                 <img class="rounded-lg" src="http://source.unsplash.com/1920x1080?{{ $wisata->kota->name }}" alt="" />
               </div>
               <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -88,9 +88,9 @@
           </article>
         @endforeach 
       </div>
-      <div class="pt-10 text-end">
+      {{-- <div class="pt-10 text-end">
         <a href="#" class="px-3 py-2 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-teal-300">View more</a>
-      </div>
+      </div> --}}
       {{-- <div class="pt-6">
         {{ $wisatas->links() }}
       </div> --}}
@@ -106,44 +106,72 @@
         <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-700">Hidden Gems</h2>
         <p class="font-light text-gray-500 sm:text-xl">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
       </div>
-    
+      
       <div class="grid gap-8 grid-cols-1 xl:grid-cols-4 lg:grid-cols-2">
-        @if ($kotas->count())
-          <div class="card-image lg:col-span-2">
-            <img src="http://source.unsplash.com/1920x1080?{{ $kotas[0]->name }}" alt="">
+        @if ($blogs->count())
+        <div class="card-image lg:col-span-2">
+          <img src="http://source.unsplash.com/1920x1080?{{ $blogs[0]->title }}" alt="">
             
             <div class="image-child">
               <div class="image-textarea">
                 
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $kotas[0]->name }}</span>
-              
+                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blogs[0]->title }}</span>
+                <p>{{ $blogs[0]->excerpt }}</p>
+                
               </div>
             </div>
-          
+            
           </div>
-    
-          @foreach ($kotas->skip(1) as $kota)
+          
+          @foreach ($blogs->skip(1) as $blog)
           <div class="card-image">
-            <img src="http://source.unsplash.com/1920x1080?{{ $kota->name }}" alt="">
+            <img src="http://source.unsplash.com/1920x1080?{{ $blog->title }}" alt="">
             
             <div class="image-child">
               <div class="image-textarea">
                 
-                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $kota->name }}</span>
-              
+                <span class="mb-2 text-2xl font-bold tracking-tight text-white">{{ $blog->title }}</span>
+                <p>{{ $blogs[0]->excerpt }}</p>
+                
               </div>
             </div>
           
           </div>
           @endforeach 
-        @else
-            
-        @endif 
-        
+          @else
+          
+          @endif 
+          
+        </div>
       </div>
-    </div>
-  </section>
-@endsection
+    </section>
+    
+    {{-- post by city --}}
+    <section class="bg-white">
+      <div class="py-24 px-4 container border">
+        
+        <div class="pb-10">
+          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-700">Destination by City</h2>
+          <p class="font-light text-gray-500 sm:text-xl">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+        </div>
+      
+        <div class="grid gap-8 xl:grid-cols-3 lg:grid-cols-2">     
+          @foreach ($kotas as $kota)
+            
+          
+          <a href="/kota/{{ $kota->slug }}" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $kota->name }}</h5>
+            <p class="font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </a>
 
-  
 
+          @endforeach
+        
+      
+      </div>
+    </section>
+    @endsection
+    
+    
+    
+    

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>YuhDolan | {{ $title }}</title>
 
+  <link rel="shortcut icon" sizes="114x114" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,7 +1,7 @@
 <footer class="bg-black">
-<div class="pt-12 pb-5 px-4 container border">
+<div class="pt-12 pb-5 px-4 container">
     <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0 w-[50%]">
+        <div class="mb-6 md:mb-0 md:w-[50%] android:w-full">
             <a href="https://flowbite.com" class="flex items-center">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">YuhDolan</span>
             </a>
@@ -35,7 +35,7 @@
     </div>
     <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
     <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-400 sm:text-center">© 2022 <a href="https://flowbite.com" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+        <span class="text-sm text-gray-400 sm:text-center">© 2022 <a href="/" class="hover:underline">YuhDolan™</a>. All Rights Reserved.
         </span>
     </div>
 </div>

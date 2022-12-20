@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Blog;
 use App\Models\Kota;
 use App\Models\User;
 use App\Models\Wisata;
@@ -50,5 +51,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Wisata::factory(20)->create();
+
+        Blog::factory(10)->create();
     }
 }

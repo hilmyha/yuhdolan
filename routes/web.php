@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\WisataController;
@@ -24,5 +25,7 @@ Route::get('/wisata', [WisataController::class, 'index']);
 Route::get('/wisata/{wisata:slug}', [WisataController::class, 'show']);
 // kota
 Route::get('/kota', [KotaController::class, 'index']);
-
+Route::get('/kota/{kota:slug}', [KotaController::class, 'show']);
+// blog
+Route::get('/blog', [BlogController::class, 'index']);
 

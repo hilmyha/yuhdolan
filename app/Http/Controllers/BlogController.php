@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Landing;
-use App\Http\Requests\StoreLandingRequest;
-use App\Http\Requests\UpdateLandingRequest;
 use App\Models\Blog;
-use App\Models\Kota;
-use App\Models\Wisata;
+use App\Http\Requests\StoreBlogRequest;
+use App\Http\Requests\UpdateBlogRequest;
 
-class LandingController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +15,9 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('welcome', [
-            'title' => 'Home',
-            'wisatas' => Wisata::with(['author', 'kota'])->latest()->paginate(6),
-            'blogs' => Blog::with(['author'])->latest()->paginate(3),
-            'kotas' => Kota::all()
+        return view('blog', [
+            'title' => 'Blog',
+            'blogs' => Blog::with(['author'])->get()
         ]);
     }
 
@@ -39,10 +34,10 @@ class LandingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreLandingRequest  $request
+     * @param  \App\Http\Requests\StoreBlogRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLandingRequest $request)
+    public function store(StoreBlogRequest $request)
     {
         //
     }
@@ -50,21 +45,25 @@ class LandingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Landing  $landing
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Landing $landing)
+    public function show(Blog $blog)
     {
-        //
+        return view('blog-single', [
+            'title' => $blog->title,
+            'blogs' => $blog->blog,
+            'authors' => $blog->author,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Landing  $landing
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Landing $landing)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -72,11 +71,11 @@ class LandingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateLandingRequest  $request
-     * @param  \App\Models\Landing  $landing
+     * @param  \App\Http\Requests\UpdateBlogRequest  $request
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLandingRequest $request, Landing $landing)
+    public function update(UpdateBlogRequest $request, Blog $blog)
     {
         //
     }
@@ -84,10 +83,10 @@ class LandingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Landing  $landing
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Landing $landing)
+    public function destroy(Blog $blog)
     {
         //
     }
