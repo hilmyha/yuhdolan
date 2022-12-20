@@ -37,21 +37,25 @@ class DatabaseSeeder extends Seeder
 
         Kota::create([
             'name' => 'Kebumen',
+            'description' => 'lorem',
             'slug' => 'kebumen',
         ]);
         
         Kota::create([
             'name' => 'Purwokerto',
+            'description' => 'lorem',
             'slug' => 'purwokerto',
         ]);
         
         Kota::create([
             'name' => 'Surakarta',
+            'description' => 'lorem',
             'slug' => 'surakarta',
         ]);
         
         Kota::create([
             'name' => 'Surabaya',
+            'description' => 'lorem',
             'slug' => 'surabaya',
         ]);
 

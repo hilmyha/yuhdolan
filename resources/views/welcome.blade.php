@@ -9,7 +9,7 @@
           <div class="carousel-textarea">
             <div class="text">
               <h3 class="font-bold text-5xl">Hello {{ $kota->name }}</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, maiores deleniti? Voluptates, voluptatem. Obcaecati laudantium aspernatur praesentium culpa, ullam a?</p>
+              <p>{{ $kota->description }}</p>
             </div>
           </div>
           <img src="http://source.unsplash.com/1920x1080?{{ $kota->name }}" alt="">
@@ -165,7 +165,7 @@
           
           <a href="/kota/{{ $kota->slug }}" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $kota->name }}</h5>
-            <p class="font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            <p class="font-normal text-gray-700">{{ $kota->description }}</p>
           </a>
 
 

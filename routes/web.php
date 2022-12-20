@@ -3,6 +3,8 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +30,10 @@ Route::get('/kota/{kota:slug}', [KotaController::class, 'show']);
 // blog
 Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
+
+
+// admin
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/login', [LoginController::class, 'index']);
 
