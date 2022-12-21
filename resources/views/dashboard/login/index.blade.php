@@ -4,7 +4,7 @@
 
 
 <section class="bg-white">
-  <div class="flex flex-col items-center justify-center py-8 md:h-screen lg:py-0">
+  <div class="flex flex-col items-center justify-center py-8 h-screen lg:py-0">
       @if (session()->has('success'))
       <div class="container mt-48 p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
         <span class="font-normal">{{ session('success') }}</span>
