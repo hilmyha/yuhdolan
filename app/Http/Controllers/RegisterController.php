@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Register;
 use App\Http\Requests\StoreRegisterRequest;
 use App\Http\Requests\UpdateRegisterRequest;
+use App\Models\User;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Routing\Controller;
 
 class RegisterController extends Controller
 {
@@ -36,17 +41,21 @@ class RegisterController extends Controller
      * @param  \App\Http\Requests\StoreRegisterRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRegisterRequest $request)
+    public function store(Request $request)
     {
-        $request->validated([
+        
+        $validatedData = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:5|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|max:255',
         ]);
 
-        dd('registrasi berhasil');
-        // return request()->all();
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
+
+        // dd('registrasi berhasil');
+        return redirect('/login')->with('success', 'Registrasi berhasil, silahkan Login');
     }
 
     /**

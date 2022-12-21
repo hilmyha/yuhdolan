@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
@@ -33,7 +34,13 @@ Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
 
 
 // admin
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
