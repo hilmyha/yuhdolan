@@ -19,7 +19,7 @@
         </div>
 
         <h1>{{ $wisata->title }}</h1>
-        <p>{{ $wisata->body }}</p>
+        {!! $wisata->body !!}
 
       </article>
       

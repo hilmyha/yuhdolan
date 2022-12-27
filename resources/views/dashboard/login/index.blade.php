@@ -5,18 +5,20 @@
 
 <section class="bg-white">
   <div class="flex flex-col items-center justify-center py-8 h-screen lg:py-0">
+      
       @if (session()->has('success'))
-      <div class="container mt-48 p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+      <div class="container w-[30%] -mt-2 p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
         <span class="font-normal">{{ session('success') }}</span>
       </div>
       @endif
       
       @if (session()->has('loginError'))
-      <div class="container mt-48 p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+      <div class="container w-[30%] -mt-2 p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
         <span class="font-normal">{{ session('loginError') }}</span>
       </div>
       @endif
-        <div class="w-full bg-white rounded-lg shadow-lg border">
+
+        <div class="w-[30%] bg-white rounded-lg shadow-lg border">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     Login to your account

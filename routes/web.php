@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardWisataController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
@@ -43,4 +44,6 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// dashboardwisata
+route::resource('/dashboard/wisata', DashboardWisataController::class)->middleware('auth');
 
